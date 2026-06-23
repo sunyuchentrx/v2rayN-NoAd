@@ -7,6 +7,7 @@ namespace v2rayN.Views;
 
 public partial class MainWindow
 {
+    private const string ProjectGitHubUrl = "https://github.com/sunyuchentrx/v2rayN-NoAd";
     private static Config _config;
     private CheckUpdateView? _checkUpdateView;
     private BackupAndRestoreView? _backupAndRestoreView;
@@ -25,6 +26,7 @@ public partial class MainWindow
         menuSettingsSetUWP.Click += MenuSettingsSetUWP_Click;
         menuClose.Click += MenuClose_Click;
         menuCheckUpdate.Click += MenuCheckUpdate_Click;
+        menuProjectGitHub.Click += MenuProjectGitHub_Click;
         btnNewUpdate.Click += MenuCheckUpdate_Click;
         menuBackupAndRestore.Click += MenuBackupAndRestore_Click;
         menuNetBridge.Click += MenuNetBridge_Click;
@@ -363,6 +365,11 @@ public partial class MainWindow
         DialogHost.Show(_checkUpdateView, "RootDialog");
 
         AppEvents.HasUpdateNotified.Publish(false);
+    }
+
+    private void MenuProjectGitHub_Click(object sender, RoutedEventArgs e)
+    {
+        ProcUtils.ProcessStart(ProjectGitHubUrl);
     }
 
     private void MenuBackupAndRestore_Click(object sender, RoutedEventArgs e)
