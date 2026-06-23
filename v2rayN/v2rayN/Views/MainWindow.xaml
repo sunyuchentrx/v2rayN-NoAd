@@ -255,7 +255,6 @@
                                     </StackPanel>
                                 </MenuItem.Header>
                                 <MenuItem x:Name="menuCheckUpdate" Header="{x:Static resx:ResUI.menuCheckUpdate}" />
-                                <Separator Margin="-40,5" />
                             </MenuItem>
                         </Menu>
                         <Separator />
